@@ -72,16 +72,19 @@ These numbers differ based on different validation data sets.
 
 Some sample messages classified as spam and non-spam are :
 
+Sample spam messages:
 ```cmd
-SPAM : This is the 2nd time we have tried 2 contact u. U have won the £750 Pound prize. 2 claim is easy, call 087187272008 NOW1! Only 10p per minute. BT-national-rate.
+This is the 2nd time we have tried 2 contact u. U have won the £750 Pound prize. 2 claim is easy, call 087187272008 NOW1! Only 10p per minute. BT-national-rate.
 
-NON-SPAM : Sorry, I'll call later
-
-SPAM : u r subscribed 2 TEXTCOMP 250 wkly comp. 1st wk?s free question follows, subsequent wks charged@150p/msg.2 unsubscribe txt STOP 2 84128,custcare 08712405020
-
-NON-SPAM : When you guys planning on coming over?
+u r subscribed 2 TEXTCOMP 250 wkly comp. 1st wk?s free question follows, subsequent wks charged@150p/msg.2 unsubscribe txt STOP 2 84128,custcare 08712405020
 ```
+Sample Non-spam messages:
 
+```cmd
+Sorry, I'll call later
+
+When you guys planning on coming over?
+```
 Data set
 --------
 
