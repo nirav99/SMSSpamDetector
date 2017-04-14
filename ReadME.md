@@ -81,7 +81,7 @@ u r subscribed 2 TEXTCOMP 250 wkly comp. 1st wk?s free question follows, subsequ
 Sample Non-spam messages:
 
 ```cmd
-Sorry, I'll call later
+Sorry, I\'ll call later
 
 When you guys planning on coming over?
 ```
