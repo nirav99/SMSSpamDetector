@@ -38,17 +38,49 @@ To train the model, execute the command
 ```cmd
 java -jar SMSSpamTrainer.jar {PathToLabeledDataSet} {OutputFile}
 ```
-
 It splits the labeled data set in training and validation data sets. About 20% data is used as validation data set.
-The class counts and the conditional probabilities are written in the output file.
+The class counts and the conditional probabilities are written in the output file. It uses the features identified from
+mutual information analysis.
 
 It also runs the validator on the validation data set and calculates the evaluation parameters.
 The conditional probabilities are availadle at data/priorcounts.json .
 
+To quickly run the trainer and see the evaluation results, run the command
+
+```cmd
+cd jar
+java -jar SMSSpamTrainer.jar ../TrainingData/SMSSpamCollection.tsv ../data/priorcounts.json
+```
+
 Results
 -------
 
-TODO.
+Sample evaluation on a validation data set is
+
+```cmd
+Overall accuracy : 
+Total records : 1018
+Total true positives : 126
+Total false positives : 1
+Total false negatives : 13
+Precision : 0.9921
+Recall : 0.9065
+fscore : 0.9474
+``
+
+These numbers differ based on different validation data sets.
+
+Some sample messages classified as spam and non-spam are :
+
+```cmd
+SPAM : This is the 2nd time we have tried 2 contact u. U have won the £750 Pound prize. 2 claim is easy, call 087187272008 NOW1! Only 10p per minute. BT-national-rate.
+
+NON-SPAM : Sorry, I'll call later
+
+SPAM : u r subscribed 2 TEXTCOMP 250 wkly comp. 1st wk?s free question follows, subsequent wks charged@150p/msg.2 unsubscribe txt STOP 2 84128,custcare 08712405020
+
+NON-SPAM : When you guys planning on coming over?
+```
 
 Data set
 --------
