@@ -91,10 +91,15 @@ public class MutualInformationCalculator
   		word = miScoreList.get(i).word();
   		System.out.print(word + " : ");
   		System.out.format("%.4f\n", miScoreList.get(i).mutualInformationScore());
-  		System.out.println("Num spam docs : " + spamWordDocs.get(word));
-  		System.out.println("Num non-spam docs : " + nonspamWordDocs.get(word));
+  		System.out.println("Num spam docs : " + getValue(spamWordDocs.get(word)));
+  		System.out.println("Num non-spam docs : " + getValue(nonspamWordDocs.get(word)));
   		System.out.println("==========================================");
   	}
+  }
+  
+  private int getValue(Integer val)
+  {
+  	return val != null ? val.intValue() : 0;
   }
   
   private double getMIScore(String word)

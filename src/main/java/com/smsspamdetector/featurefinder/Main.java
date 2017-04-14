@@ -9,7 +9,21 @@ public class Main
   {
   	try
   	{
-  		File inputFile = new File("/Users/nirav99/Documents/JavaPrograms/SMSSpamDetector/data/SMSSpamCollection.tsv");
+  	//	File inputFile = new File("/Users/nirav99/Documents/JavaPrograms/SMSSpamDetector/data/SMSSpamCollection.tsv");
+  		
+  		if(args == null || args.length != 1 || args[0].toLowerCase().contains("help"))
+  		{
+  			printUsage();
+  			return;
+  		}
+  		File inputFile = new File(args[0]);
+  		
+  		if(!inputFile.exists() || !inputFile.isFile() || !inputFile.canRead())
+  		{
+  			System.err.println("Error : " + inputFile.getAbsolutePath() + " must be a valid readable file");
+  			return;
+  		}
+  		
   		DataReader reader = new DataReader(inputFile);
   		
   		ArrayList<TextDocument> textDocumentList = reader.textDocumentList();
@@ -22,5 +36,12 @@ public class Main
   	{
   		e.printStackTrace();
   	}
+  }
+  
+  private static void printUsage()
+  {
+  	System.err.println("Usage : ");
+  	System.err.println("Provide 1 parameter");
+  	System.err.println("DataFile - the labeled spam / non-spam data");
   }
 }
