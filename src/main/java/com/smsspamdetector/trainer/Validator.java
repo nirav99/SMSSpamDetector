@@ -3,6 +3,8 @@ package com.smsspamdetector.trainer;
 import java.util.*;
 
 import com.smsspamdetector.common.DataNormalizer;
+import com.smsspamdetector.common.Features;
+import com.smsspamdetector.common.PriorCountsCalculator;
 
 /**
  * Classifies the labeled data in the validation set to calculate the F-score.

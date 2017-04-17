@@ -42,9 +42,25 @@ task trainer(type: Jar) {
   with jar
 }
 
+task predictor(type: Jar) {
+  from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+  }
+  manifest {
+    attributes 'Main-Class': 'com.smsspamdetector.predictor.Predictor'
+  }
+  baseName = 'SMSSpamPredictor'
+  destinationDir = file("${rootDir}/jar")
+ 
+  exclude('com/smsspamdetector/featurefinder/*')
+  with jar
+}
+
 /* Builds all the jar files for the project */
 task all() << {
   println 'Building All JAR Files'
 }
 
-all.dependsOn 'featurefinder','trainer'
+all.dependsOn 'featurefinder','trainer','predictor'

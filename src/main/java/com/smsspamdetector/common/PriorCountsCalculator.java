@@ -1,10 +1,10 @@
-package com.smsspamdetector.trainer;
+package com.smsspamdetector.common;
 
 import java.util.*;
 import java.io.*;
 
 import com.google.gson.*;
-import com.smsspamdetector.common.DataNormalizer;
+import com.smsspamdetector.trainer.LabeledData;
 
 /**
  * Calculates the prior probabilities and counts of features in the training data for Bernoulli naive bayes model.
@@ -26,9 +26,9 @@ public class PriorCountsCalculator
   private Features spamFeatures;
   private Features nonspamFeatures;
   
-  public PriorCountsCalculator(ArrayList<LabeledData> labeledDataList)
+  public PriorCountsCalculator(ArrayList<LabeledData> labeledDataList,DataNormalizer normalizer)
   {
-  	normalizer = new DataNormalizer();
+  	this.normalizer = normalizer;
     spamData = new ArrayList<String>();
     nonspamData = new ArrayList<String>();
   	

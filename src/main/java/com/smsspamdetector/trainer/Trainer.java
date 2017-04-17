@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 import com.smsspamdetector.common.DataNormalizer;
+import com.smsspamdetector.common.PriorCountsCalculator;
 
 
 /**
@@ -38,7 +39,7 @@ public class Trainer
   private void trainModel(File outputFile) throws IOException
   {
   	DataNormalizer normalizer = new DataNormalizer();
-  	priorCalculator = new PriorCountsCalculator(trainingDataList);
+  	priorCalculator = new PriorCountsCalculator(trainingDataList, normalizer);
   	priorCalculator.writeCountsToFile(outputFile);
   	
   	Validator validator = new Validator(priorCalculator, normalizer);

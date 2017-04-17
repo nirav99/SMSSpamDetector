@@ -1,8 +1,6 @@
-package com.smsspamdetector.trainer;
+package com.smsspamdetector.common;
 
 import java.util.*;
-
-import com.smsspamdetector.common.DataNormalizer;
 
 /**
  * Encapsulates the features of spam and non-spam messages identified using mutual information.

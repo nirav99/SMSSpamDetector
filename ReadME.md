@@ -85,6 +85,22 @@ Sorry, I'll call later
 
 When you guys planning on coming over?
 ```
+
+Predicting Class Of New Messages
+--------------------------------
+
+After the model is trained, SMSSPAMPredictor.jar can be used to determine if the new messages are spam or not-spam.
+
+Say, the messages to be checked are available in a file named testdata.txt in the data directory, then one can use the
+following command to identify the spam messages :
+
+```cmd
+java -jar SMSSpamPredictor.jar {modelfile} ./data/testdata.txt
+```
+
+Where the modelFile is the outputFile produced by SMSSpamTrainer.
+
+
 Data set
 --------
 
