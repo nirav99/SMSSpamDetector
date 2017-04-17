@@ -19,7 +19,7 @@ public class Features
 	 */
   private transient final static String[] features = {
     "phonenumber", "wordwithletternumber", "money", "text", "call", "free", "win", "claim", "to", 
-    "mobile", "prize", "i", "your", "stop", "now", "ur    gent", "reply", "guaranteed", "service", "cash", 
+    "mobile", "prize", "i", "your", "stop", "now", "urgent", "reply", "guaranteed", "service", "cash", 
     "18", "from", "nokia", "contact", "tone", "our", "awarded", "a", "customer", "150ppm", "per", "draw", "latest", 
     "for", "landline", "my", "code", "new", "ringtone", "150p", "line", "box"	
   };
